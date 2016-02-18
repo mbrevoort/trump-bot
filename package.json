@@ -1,0 +1,29 @@
+{
+  "name": "trump-slack-bot",
+  "version": "0.0.1",
+  "description": "That's one of the nice things. I mean, part of the beauty of me is that I'm very rich.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbrevoort/trump-slack-bot.git"
+  },
+  "keywords": [
+    "slack",
+    "bot",
+    "trump"
+  ],
+  "author": "Mike Brevoort",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbrevoort/trump-slack-bot/issues"
+  },
+  "homepage": "https://github.com/mbrevoort/trump-slack-bot#readme",
+  "dependencies": {
+    "airtable": "^0.4.0",
+    "botkit": "0.0.7",
+    "witbot": "^2.0.0"
+  }
+}

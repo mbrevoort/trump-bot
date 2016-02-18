@@ -1,0 +1,18 @@
+name: Trump
+description: I don't like losers
+avatar: assets/trump.jpg
+background: assets/background.jpg
+config:
+  - name: AIRTABLE_API_KEY
+    friendly_name: Airtable API Key
+    type: secret
+    global: true
+  - name: AIRTABLE_BASE
+    friendly_name: Airtable Database
+    type: secret
+    global: true
+  - name: WIT_TOKEN
+    friendly_name: The Wit.ai API Token
+    info: This is the wit api token for your app on wit.ai
+    type: secret
+    global: true
