@@ -17,6 +17,7 @@ config:
     type: secret
     global: true
   - name: OPENWEATHER_KEY
+    info: Open Weather Map API key
     friendly_name: The Open Weather API Key
     type: secret
     global: true
