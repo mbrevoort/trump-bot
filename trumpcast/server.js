@@ -28,11 +28,11 @@ function getMessage (name, temp, condition, code) {
   if (code >= 600 && code < 700) {
     return 'I love watching ' + name + ' fail. *' + temp + '* and *' + condition + '*.'
   }
-  // clear and clouds
+  // clear
   if (code >= 800 && code < 802) {
     return name + ' is beautiful like my daughter Ivanka: *' + temp + '* and *' + condition + '*.'
   }
-  // clear and clouds
+  // and clouds
   if (code >= 802 && code < 900) {
     return name + '\'s got a lot of problems! ' + name + '. *' + temp + '* and *' + condition + '*.'
   }

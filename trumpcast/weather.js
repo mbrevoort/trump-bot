@@ -18,7 +18,7 @@ function Weather (token) {
       if (response.statusCode !== 200) {
         return fn(new Error('unexpected status ' + response.statusCode))
       }
-      console.log(data)
+
       var currentConditions = data.weather[0].description
       var conditionID = data.weather[0].id
       var currentTemp = Math.round(data.main.temp * 1.8 + 32) + '°F'
