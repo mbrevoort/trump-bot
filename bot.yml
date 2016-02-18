@@ -16,3 +16,7 @@ config:
     info: This is the wit api token for your app on wit.ai
     type: secret
     global: true
+  - name: OPENWEATHER_KEY
+    friendly_name: The Open Weather API Key
+    type: secret
+    global: true
