@@ -1,6 +1,6 @@
 var Botkit = require('botkit')
 var weather = require('./weather')(process.env.OPENWEATHER_KEY)
-var controller = Botkit.slackbot({ debug: false })
+var controller = Botkit.slackbot()
 
 controller.spawn({ token: process.env.SLACK_TOKEN }).startRTM(function (err, bot, payload) {
   if (err) throw new Error('Error connecting to slack: ', err)
@@ -14,6 +14,7 @@ controller.hears('^What is the weather in (.*)', 'ambient,direct_message', funct
     bot.reply(message, getMessage(name, temp, condition, code))
   })
 })
+
 
 function getMessage (name, temp, condition, code) {
   // thunderstorm
