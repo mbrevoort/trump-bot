@@ -4,7 +4,7 @@
   "description": "That's one of the nice things. I mean, part of the beauty of me is that I'm very rich.",
   "main": "server.js",
   "scripts": {
-    "start": "node trumpcast/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
