@@ -4,6 +4,7 @@ var witbot = Witbot(process.env.WIT_TOKEN)
 var getResponse = require('./responses')
 
 var controller = Botkit.slackbot({debug: false})
+
 require('beepboop-botkit').start(controller, { debug: true })
 
 controller.hears('.*', ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
