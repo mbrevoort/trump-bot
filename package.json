@@ -23,6 +23,7 @@
   "homepage": "https://github.com/mbrevoort/trump-slack-bot#readme",
   "dependencies": {
     "airtable": "^0.4.0",
+    "beepboop-botkit": "0.0.5",
     "botkit": "0.0.7",
     "request": "^2.69.0",
     "witbot": "^2.1.0"

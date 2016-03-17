@@ -4,10 +4,8 @@ var witbot = Witbot(process.env.WIT_TOKEN)
 var getResponse = require('./responses')
 
 var controller = Botkit.slackbot({debug: false})
-// connect the bot to a stream of messages
-controller.spawn({
-  token: process.env.SLACK_TOKEN
-}).startRTM()
+
+require('beepboop-botkit').start(controller, { debug: true })
 
 controller.hears('.*', ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
   witbot.process(message.text).any(function (outcome) {
