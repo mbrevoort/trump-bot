@@ -21,3 +21,5 @@ config:
     friendly_name: The Open Weather API Key
     type: secret
     global: true
+slackscopes:
+  - bot
