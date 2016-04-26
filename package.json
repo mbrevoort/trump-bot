@@ -24,7 +24,7 @@
   "dependencies": {
     "airtable": "^0.4.0",
     "beepboop-botkit": "1.1.1",
-    "botkit": "0.0.14",
+    "botkit": "^0.1.1",
     "request": "^2.69.0",
     "witbot": "^2.1.0"
   }
