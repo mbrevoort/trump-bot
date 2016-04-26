@@ -49,7 +49,7 @@ if (bbb) {
 
           convo.say('I\'m the most glorious bot to join your team')
           convo.say('You must now /invite me to a channel so that I may show everyone how dumb you are')
-          convo.next()
+          convo.stop()
         })
       }
     }, 5000)
