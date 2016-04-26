@@ -32,7 +32,7 @@ if (bbb) {
   bbb.on('add_resource', function (message) {
     var slackTeamId = message.resource.SlackTeamID
     var slackUserId = message.resource.SlackUserID
-    console.log('add_resource', slackTeamId, slackUserId)
+    console.log('add_resource', slackTeamId, slackUserId, message)
 
     setTimeout(function () {
       if (message.IsNew && slackUserId) {
@@ -41,6 +41,7 @@ if (bbb) {
           return console.log('Error looking up botkit bot for team %s', slackTeamId)
         }
 
+        console.log('starting private conversation with ', slackUserId)
         bot.startPrivateConversation({user: slackUserId}, function (err, convo) {
           if (err) {
             return console.log(err)
@@ -48,6 +49,7 @@ if (bbb) {
 
           convo.say('I the most glorious bot that has just joined your team')
           convo.say('You must now /invite me to a channel so that I may show you how dumb you are')
+          convo.next()
         })
       }
     }, 5000)
