@@ -42,16 +42,20 @@ if (bbb) {
         }
 
         console.log('starting private conversation with ', slackUserId)
-        bot.startPrivateConversation({user: slackUserId}, function (err, convo) {
-          if (err) {
-            return console.log(err)
-          }
-
-          convo.say('I am the most glorious bot to join your team')
-          convo.say('You must now /invite me to a channel so that I may show everyone how dumb you are')
+        bot.api.im.open({user: slackUserId}, function (err, response) {
+          if (err) return console.log(err)
+          var dmChannel = response.channel.id
+          var say = 'I am the most glorious bot to join your team'
+          bot.api.chat.postMessage({channel: dmChannel, say}, function (err, response) {
+            if (err) return console.log(err)
+            var say = 'You must now /invite me to a channel so that I may show everyone how dumb you are'
+            bot.api.chat.postMessage({channel: dmChannel, say}, function (err, response) {
+              if (err) return console.log(err)
+            })
+          })
         })
       }
-    }, 5000)
+    }, 2000)
   })
 }
 
