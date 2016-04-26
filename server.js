@@ -35,7 +35,7 @@ if (bbb) {
     console.log('add_resource', slackTeamId, slackUserId, message)
 
     setTimeout(function () {
-      if (message.IsNew && slackUserId) {
+      if (message.isNew && slackUserId) {
         var bot = bbb.botByTeamId(slackTeamId)
         if (!bot) {
           return console.log('Error looking up botkit bot for team %s', slackTeamId)
