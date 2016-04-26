@@ -32,22 +32,25 @@ if (bbb) {
   bbb.on('add_resource', function (message) {
     var slackTeamId = message.resource.SlackTeamID
     var slackUserId = message.resource.SlackUserID
+    console.log('add_resource', slackTeamId, slackUserId)
 
-    if (message.IsNew && slackUserId) {
-      var bot = bbb.botByTeamId(slackTeamId)
-      if (!bot) {
-        return console.log('Error looking up botkit bot for team %s', slackTeamId)
-      }
-
-      bot.startPrivateConversation({user: slackUserId}, function (err, convo) {
-        if (err) {
-          return console.log(err)
+    setTimeout(function () {
+      if (message.IsNew && slackUserId) {
+        var bot = bbb.botByTeamId(slackTeamId)
+        if (!bot) {
+          return console.log('Error looking up botkit bot for team %s', slackTeamId)
         }
 
-        convo.say('I the most glorious bot that has just joined your team')
-        convo.say('You must now /invite me to a channel so that I may show you how dumb you are')
-      })
-    }
+        bot.startPrivateConversation({user: slackUserId}, function (err, convo) {
+          if (err) {
+            return console.log(err)
+          }
+
+          convo.say('I the most glorious bot that has just joined your team')
+          convo.say('You must now /invite me to a channel so that I may show you how dumb you are')
+        })
+      }
+    }, 5000)
   })
 }
 
