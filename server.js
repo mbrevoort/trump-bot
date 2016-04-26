@@ -47,7 +47,7 @@ if (bbb) {
             return console.log(err)
           }
 
-          convo.say('I\'m the most glorious bot to join your team')
+          convo.say('I am the most glorious bot to join your team')
           convo.say('You must now /invite me to a channel so that I may show everyone how dumb you are')
           convo.stop()
         })
