@@ -45,14 +45,8 @@ if (bbb) {
         bot.api.im.open({user: slackUserId}, function (err, response) {
           if (err) return console.log(err)
           var dmChannel = response.channel.id
-          var say = 'I am the most glorious bot to join your team'
-          bot.api.chat.postMessage({channel: dmChannel, text: say}, function (err, response) {
-            if (err) return console.log(err)
-            var say = 'You must now /invite me to a channel so that I may show everyone how dumb you are'
-            bot.api.chat.postMessage({channel: dmChannel, text: say}, function (err, response) {
-              if (err) return console.log(err)
-            })
-          })
+          bot.say({channel: dmChannel, text: 'I am the most glorious bot to join your team'})
+          bot.say({channel: dmChannel, text: 'You must now /invite me to a channel so that I may show everyone how dumb you are'})
         })
       }
     }, 2000)
