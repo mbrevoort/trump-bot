@@ -1,6 +1,6 @@
 # Privacy Policy
 
-## Salutat Morpheus
+## Salutat Morpheus 💍
 
 Lorem markdownum moram referam iratus et placere supremo solis ad urebat iudice,
 non **quis**, flexit ne hoc. Tota attollit frontes faciat, hic sub cumque non
