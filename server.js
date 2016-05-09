@@ -46,11 +46,13 @@ if (bbb) {
           return console.log(err)
         }
 
-        convo.ask('Are you ready?', function (response, convo) {
-          convo.say('I\'m the most glorious bot to join your team')
-          convo.say('You must now /invite me to a channel so that I may show everyone how dumb you are')
-          convo.next()
-        })
+        setTimeout(function () {
+          convo.ask('Are you ready?', function (response, convo) {
+            convo.say('I\'m the most glorious bot to join your team')
+            convo.say('You must now /invite me to a channel so that I may show everyone how dumb you are')
+            convo.next()
+          })
+        }, 5000)
       })
 
       // console.log('starting private conversation with ', slackUserId)
