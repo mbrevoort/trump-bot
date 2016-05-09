@@ -34,22 +34,33 @@ if (bbb) {
     var slackUserId = message.resource.SlackUserID
     console.log('add_resource', slackTeamId, slackUserId, message)
 
-    setTimeout(function () {
-      if (message.isNew && slackUserId) {
-        var bot = bbb.botByTeamId(slackTeamId)
-        if (!bot) {
-          return console.log('Error looking up botkit bot for team %s', slackTeamId)
+    if (message.isNew && slackUserId) {
+      var bot = bbb.botByTeamId(slackTeamId)
+      if (!bot) {
+        return console.log('Error looking up botkit bot for team %s', slackTeamId)
+      }
+
+      console.log('starting private conversation with ', slackUserId)
+      bot.startPrivateConversation({user: slackUserId}, function (err, convo) {
+        if (err) {
+          return console.log(err)
         }
 
-        console.log('starting private conversation with ', slackUserId)
-        bot.api.im.open({user: slackUserId}, function (err, response) {
-          if (err) return console.log(err)
-          var dmChannel = response.channel.id
-          bot.say({channel: dmChannel, text: 'I am the most glorious bot to join your team'})
-          bot.say({channel: dmChannel, text: 'You must now /invite me to a channel so that I may show everyone how dumb you are'})
+        convo.ask('Are you ready?', function (response, convo) {
+          convo.say('I\'m the most glorious bot to join your team')
+          convo.say('You must now /invite me to a channel so that I may show everyone how dumb you are')
+          convo.next()
         })
-      }
-    }, 2000)
+      })
+
+      // console.log('starting private conversation with ', slackUserId)
+      // bot.api.im.open({user: slackUserId}, function (err, response) {
+      //   if (err) return console.log(err)
+      //   var dmChannel = response.channel.id
+      //   bot.say({channel: dmChannel, text: 'I am the most glorious bot to join your team'})
+      //   bot.say({channel: dmChannel, text: 'You must now /invite me to a channel so that I may show everyone how dumb you are'})
+      // })
+    }
   })
 }
 
