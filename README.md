@@ -1,2 +1,3 @@
 # trump-bot
 
+Wit + Airtable
