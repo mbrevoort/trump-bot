@@ -1,3 +1,3 @@
 # trump-bot
 
-Wit + Airtable
+Wit + Airtable personality bot
