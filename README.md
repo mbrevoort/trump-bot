@@ -1,4 +1,4 @@
 # trump-bot
 
-Basic Wit + Airtable personality bot
+Basic Wit (old) + Airtable personality bot
 
