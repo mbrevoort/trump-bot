@@ -1,5 +1,6 @@
 name: Trump
 description: I don't like losers
+author: Mike Brevoort
 avatar: assets/trump.jpg
 background: assets/background.jpg
 config:
