@@ -20,6 +20,5 @@ config:
     info: Open Weather Map API key
     friendly_name: The Open Weather API Key
     type: secret
-    global: true
 slackscopes:
   - bot
