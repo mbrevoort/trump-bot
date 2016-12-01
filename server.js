@@ -56,6 +56,7 @@ function blockCpuFor(ms) {
 	var result = 0
 	while(shouldRun) {
 		result += Math.random() * Math.random();
+    console.log(result)
 		if (new Date().getTime() > now +ms)
 			return;
 	}
