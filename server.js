@@ -45,6 +45,23 @@ if (bbb) {
   })
 }
 
+controller.hears('load (.*)', ['direct_message'], function (bot, message) {
+  var dur = parseInt(message.match[1]) * 1000
+  bot.reply(message, `blocking CPU for ${dur}s`);
+  blockCpuFor(dur)
+})
+
+
+function blockCpuFor(ms) {
+	var now = new Date().getTime();
+	var result = 0
+	while(shouldRun) {
+		result += Math.random() * Math.random();
+		if (new Date().getTime() > now +ms)
+			return;
+	}
+}
+
 controller.hears('.*', ['direct_message', 'direct_mention', 'mention'], function (bot, message) {
   witbot.process(message.text).any(function (outcome) {
     if (outcome && outcome.intent) {
