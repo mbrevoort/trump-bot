@@ -51,7 +51,6 @@ controller.hears('load (.*)', ['direct_message'], function (bot, message) {
   blockCpuFor(dur)
 })
 
-
 function blockCpuFor(ms) {
 	var now = new Date().getTime();
 	var result = 0
