@@ -54,7 +54,7 @@ controller.hears('load (.*)', ['direct_message'], function (bot, message) {
 function blockCpuFor(ms) {
 	var now = new Date().getTime();
 	var result = 0
-	while(shouldRun) {
+	while(true) {
 		result += Math.random() * Math.random();
     console.log(result)
 		if (new Date().getTime() > now +ms)
