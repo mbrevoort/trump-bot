@@ -48,7 +48,14 @@ if (bbb) {
 controller.hears('load (.*)', ['direct_message'], function (bot, message) {
   var dur = parseInt(message.match[1]) * 1000
   bot.reply(message, `blocking CPU for ${dur}s`);
-  blockCpuFor(dur)
+
+  var iter = () => {
+      if (dur < 0) return
+      blockCpuFor(1000)
+      dur -= 1000
+      setTimeout(iter, 5)
+  }
+  iter()
 })
 
 function blockCpuFor(ms) {
